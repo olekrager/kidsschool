@@ -1,103 +1,128 @@
+'use client';
+
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+    <main className="flex flex-col items-center min-h-screen bg-gradient-to-br from-[#fffbe7] to-[#e6fbea] py-8">
+      {/* ВЕРХНИЙ БЛОК */}
+      <div className="flex flex-col items-center mt-4 mb-6">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+          src="/kids-with-book.png"
+          width={200}
+          height={200}
+          alt="Дети с книгой"
+          className="rounded-2xl shadow-xl mb-4 transition-transform duration-300 hover:scale-105"
         />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+        <h1 className="text-5xl font-extrabold mb-2 text-center">Добро пожаловать!</h1>
+        <p className="text-lg text-center max-w-2xl">
+          Помогаем детям изучать русский язык легко, с удовольствием и результатом.<br />
+          Мультяшная школа для детей и подростков!
+        </p>
+        <button className="mt-5 btn-main transition-transform duration-200 hover:scale-110">
+          Записаться на бесплатный урок
+        </button>
+      </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* О НАС */}
+      <section className="w-full max-w-4xl px-4 mb-8">
+        <h2 className="text-2xl font-bold mb-2">О нас</h2>
+        <p className="mb-2">
+          Опытные преподаватели (сертификация РКИ), индивидуальный подход, забота о каждом ребёнке. Используем современные игровые методики. Готовим к ТРКИ и олимпиадам!
+        </p>
+        <ul className="list-disc list-inside mb-4">
+          <li>Сертификаты и грамоты</li>
+          <li>Отзывы родителей</li>
+        </ul>
+      </section>
+
+      {/* КАРТОЧКИ */}
+      <section className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
+        {/* 1. Индивидуальные занятия (school-supplies) */}
+        <div className="card flex flex-col items-center transition-transform duration-200 hover:scale-105 hover:shadow-2xl cursor-pointer">
+          <Image
+            src="/school-supplies.png"
+            width={120}
+            height={120}
+            alt="Индивидуальные занятия"
+            className="mb-4 rounded-xl shadow"
+          />
+          <h3 className="text-xl font-extrabold mb-2 text-center">Индивидуальные занятия</h3>
+          <p className="text-center mb-4">
+            Персональный подход, игры и гибкий график. Для детей и подростков.
+          </p>
+          <button className="btn-main">Подробнее</button>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+
+        {/* 2. Групповые курсы (goose-goat-pig) */}
+        <div className="card flex flex-col items-center transition-transform duration-200 hover:scale-105 hover:shadow-2xl cursor-pointer">
           <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            src="/goose-goat-pig.PNG"
+            width={120}
+            height={120}
+            alt="Групповые курсы"
+            className="mb-4 rounded-xl shadow"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+          <h3 className="text-xl font-extrabold mb-2 text-center">Групповые курсы</h3>
+          <p className="text-center mb-4">
+            Весёлое обучение в мини-группах, общение и результат.
+          </p>
+          <button className="btn-main">Подробнее</button>
+        </div>
+
+        {/* 3. Детские интенсивы (stars) */}
+        <div className="card flex flex-col items-center transition-transform duration-200 hover:scale-105 hover:shadow-2xl cursor-pointer">
           <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
+            src="/stars.png"
+            width={120}
+            height={120}
+            alt="Детские интенсивы"
+            className="mb-4 rounded-xl shadow"
           />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+          <h3 className="text-xl font-extrabold mb-2 text-center">Детские интенсивы</h3>
+          <p className="text-center mb-4">
+            Уровни А1–В2, короткие и эффективные занятия, подготовка к ТРКИ.
+          </p>
+          <button className="btn-main">Подробнее</button>
+        </div>
+      </section>
+
+      {/* НИЖНИЙ БЛОК: преподаватель + ученик + бонус */}
+      <div className="w-full max-w-5xl flex flex-col md:flex-row justify-center items-center gap-8 mt-12 px-4">
+        {/* Преподаватель */}
+        <div className="flex flex-col items-center transition-transform duration-200 hover:scale-105 hover:shadow-xl cursor-pointer">
           <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
+            src="/hero-edu.png"
+            width={100}
+            height={100}
+            alt="Ваш преподаватель"
+            className="mb-2 rounded-xl shadow"
           />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          <span className="font-bold">Ваш преподаватель</span>
+        </div>
+        {/* Ученик */}
+        <div className="flex flex-col items-center transition-transform duration-200 hover:scale-105 hover:shadow-xl cursor-pointer">
+          <Image
+            src="/happy.png.PNG"
+            width={100}
+            height={100}
+            alt="Счастливый ученик"
+            className="mb-2 rounded-xl shadow"
+          />
+          <span className="font-bold">Счастливый ученик :)</span>
+        </div>
+        {/* Бонус — еще одна картинка (dog-sad) */}
+        <div className="flex flex-col items-center transition-transform duration-200 hover:scale-105 hover:shadow-xl cursor-pointer">
+          <Image
+            src="/dog-sad.PNG"
+            width={100}
+            height={100}
+            alt="Грустный ученик"
+            className="mb-2 rounded-xl shadow"
+          />
+          <span className="font-bold">Грустный ученик (без нас)</span>
+        </div>
+      </div>
+    </main>
   );
 }
